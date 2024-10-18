@@ -28,6 +28,19 @@ dependencies:
   jwt_decoder: ^2.0.1
   firebase_auth: ^5.3.1
   firebase_core: ^3.6.0
+  currency_text_input_formatter: ^2.2.5
+  intl: ^0.19.0
+  image_picker: ^1.1.2
+  permission_handler: ^11.3.1
+  mime: ^1.0.6
+  currency_formatter: ^2.2.1
+  http_parser: ^4.0.2
+  path_provider: ^2.1.4
+  qr_flutter: ^4.1.0
+  fluttertoast: ^8.2.8
+  font_awesome_flutter: ^10.7.0
+  flutter_image_saver: ^1.0.1
+  widgets_to_png: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -41,6 +54,7 @@ flutter:
   assets:
     - .env
     - assets/images/logos/google.png
+    - assets/images/club/club_basic_image.jpg
 
   fonts:
     - family: Pretendard

@@ -1,4 +1,5 @@
-enum AuthStatus {
+enum AuthState {
+  loading,
   authenticated,
   unauthenticated,
 }

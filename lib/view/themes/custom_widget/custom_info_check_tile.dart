@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:woohakdong/view/themes/theme_context.dart';
 
-import '../../themes/spacing.dart';
+import '../spacing.dart';
 
-class MemberInfoCheck extends StatelessWidget {
+class CustomInfoCheckTile extends StatelessWidget {
   final String infoTitle;
   final String infoContent;
 
-  const MemberInfoCheck({
+  const CustomInfoCheckTile({
     super.key,
     required this.infoTitle,
     required this.infoContent,

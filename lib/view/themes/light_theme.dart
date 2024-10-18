@@ -5,7 +5,7 @@ import 'package:woohakdong/view/themes/text_style.dart';
 
 /// 주요 색상
 const Color primary = Color(0xFF1A74E8);
-const Color secondaryPrimary = Color(0xFF7DA1F2);
+const Color secondaryPrimary = Color(0xFFD7E8FF);
 const Color red = Color(0xFFE53935);
 const Color green = Color(0xFF43A047);
 
@@ -36,6 +36,9 @@ final ThemeData lightTheme = ThemeData(
     outline: gray,
     error: red,
     onError: white,
+    tertiary: green,
+    onTertiary: white,
+    surfaceDim: white,
   ),
 
   /// 텍스트 테마
@@ -70,6 +73,7 @@ final ThemeData lightTheme = ThemeData(
     elevation: 0,
     scrolledUnderElevation: 0,
     centerTitle: false,
+    titleSpacing: defaultPaddingM,
     iconTheme: IconThemeData(color: black),
     actionsIconTheme: IconThemeData(color: black),
   ),
@@ -77,11 +81,6 @@ final ThemeData lightTheme = ThemeData(
   /// 아이콘 테마
   iconTheme: const IconThemeData(
     color: black,
-  ),
-
-  /// 프로그레스바 테마
-  progressIndicatorTheme: const ProgressIndicatorThemeData(
-    color: primary,
   ),
 
   /// 바텀 네비게이션바 테마

@@ -12,6 +12,8 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputAction textInputAction;
   final FormFieldValidator<String>? validator;
   final FormFieldSetter<String>? onSaved;
+  final ValueChanged<String>? onChanged;
+  final TextEditingController? controller;
 
   const CustomTextFormField({
     super.key,
@@ -24,17 +26,22 @@ class CustomTextFormField extends StatelessWidget {
     this.textInputAction = TextInputAction.next,
     this.validator,
     this.onSaved,
+    this.onChanged,
+    this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       style: context.textTheme.titleSmall,
       textInputAction: textInputAction,
       initialValue: initialValue,
       readOnly: readOnly,
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,
+      minLines: 1,
+      maxLines: null,
       decoration: InputDecoration(
         labelText: labelText,
         labelStyle: context.textTheme.titleSmall?.copyWith(
@@ -50,6 +57,9 @@ class CustomTextFormField extends StatelessWidget {
         errorBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: context.colorScheme.error),
         ),
+        focusedErrorBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: context.colorScheme.error),
+        ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: context.colorScheme.surfaceContainer),
         ),
@@ -59,6 +69,7 @@ class CustomTextFormField extends StatelessWidget {
       ),
       validator: validator,
       onSaved: onSaved,
+      onChanged: onChanged,
       autovalidateMode: AutovalidateMode.onUserInteraction,
     );
   }

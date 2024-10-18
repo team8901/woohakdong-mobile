@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
 
 import '../../service/dio/dio_service.dart';
+import '../../service/general/general_functions.dart';
 import '../../service/logger/logger.dart';
 
-class Auth {
+class WoohakdongAuthRepository {
   final Dio _dio = DioService().dio;
 
   Future<Map<String, String>?> logIn(String googleAccessToken) async {
@@ -26,6 +27,7 @@ class Auth {
         return null;
       }
     } catch (e) {
+      await GeneralFunctions.generalToastMessage('학교 계정으로 로그인해 주세요');
       logger.e('토큰 발급 실패', error: e);
       return null;
     }

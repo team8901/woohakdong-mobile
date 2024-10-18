@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:woohakdong/view/themes/theme_context.dart';
 
-class RecommendWord extends StatelessWidget {
-  const RecommendWord({
+class LoginRecommned extends StatelessWidget {
+  const LoginRecommned({
     super.key,
   });
 

@@ -4,8 +4,8 @@ import 'package:woohakdong/view/themes/theme_context.dart';
 
 import '../../themes/spacing.dart';
 
-class IntroduceWord extends StatelessWidget {
-  const IntroduceWord({super.key});
+class LoginIntroduce extends StatelessWidget {
+  const LoginIntroduce({super.key});
 
   @override
   Widget build(BuildContext context) {

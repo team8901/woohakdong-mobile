@@ -1,3 +1,5 @@
+/// Padding: 12
+const double defaultPaddingXS = 12.0;
 /// Padding: 16
 const double defaultPaddingS = 16.0;
 /// Padding: 20

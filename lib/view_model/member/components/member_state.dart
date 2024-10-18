@@ -1,0 +1,4 @@
+enum MemberState {
+  member,
+  nonMember,
+}

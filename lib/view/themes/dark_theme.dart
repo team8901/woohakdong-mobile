@@ -5,18 +5,19 @@ import 'package:woohakdong/view/themes/text_style.dart';
 
 /// 주요 색상
 const Color primary = Color(0xFF3D63DD);
-const Color secondaryPrimary = Color(0xFF405EB2);
+const Color secondaryPrimary = Color(0xFF1D2E61);
 const Color red = Color(0xFFE53935);
 const Color green = Color(0xFF43A047);
 
 /// 그레이 스케일
 const Color black = Color(0xFF111111);
-const Color darkGray = Color(0xFF292A2E);
-const Color gray = Color(0xFF575960);
-const Color lightGray = Color(0xFF797B86);
-const Color white = Color(0xFFEEEEF0);
+const Color darkGray = Color(0xFF6C6E75);
+const Color gray = Color(0xFF797B82);
+const Color lightGray = Color(0xFFB2B4B9);
+const Color white = Color(0xFFEDEEEF);
 
 final ThemeData darkTheme = ThemeData(
+  /// 기본
   brightness: Brightness.dark,
   primaryColor: primary,
   scaffoldBackgroundColor: black,
@@ -35,6 +36,9 @@ final ThemeData darkTheme = ThemeData(
     outline: gray,
     error: red,
     onError: white,
+    tertiary: green,
+    onTertiary: white,
+    surfaceDim: black,
   ),
 
   /// 텍스트 테마
