@@ -46,7 +46,7 @@ class ItemRepository {
 
         List<dynamic> itemListData = jsonData['result'] as List<dynamic>;
 
-        return itemListData.map((json) => Item.fromJson(json as Map<String, dynamic>)).toList();
+        return itemListData.map((json) => Item.fromJson(json as Map<String, dynamic>, true)).toList();
       }
 
       throw Exception();
@@ -67,7 +67,7 @@ class ItemRepository {
       if (response.statusCode == 200) {
         final Map<String, dynamic> jsonData = response.data;
 
-        return Item.fromJson(jsonData);
+        return Item.fromJson(jsonData, false);
       }
 
       throw Exception();

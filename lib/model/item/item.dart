@@ -49,11 +49,17 @@ class Item {
     );
   }
 
-  factory Item.fromJson(Map<String, dynamic> json) {
+  factory Item.fromJson(Map<String, dynamic> json, bool isList) {
+    String? thumbnail = json['itemPhoto'];
+
+    if (thumbnail != null && thumbnail.contains('/images/')) {
+      thumbnail = thumbnail.replaceAll('/images/', '/thumbnail/');
+    }
+
     return Item(
       itemId: json['itemId'],
       itemName: json['itemName'],
-      itemPhoto: json['itemPhoto'],
+      itemPhoto: isList ? thumbnail : json['itemPhoto'],
       itemDescription: json['itemDescription'],
       itemLocation: json['itemLocation'],
       itemCategory: json['itemCategory'],

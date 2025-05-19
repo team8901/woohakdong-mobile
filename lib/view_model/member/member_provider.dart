@@ -1,4 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:woohakdong/view_model/auth/components/auth_state.dart';
+import 'package:woohakdong/view_model/auth/components/auth_state_provider.dart';
 import 'package:woohakdong/view_model/member/components/member_state.dart';
 import 'package:woohakdong/view_model/member/components/member_state_provider.dart';
 
@@ -15,15 +17,20 @@ class MemberNotifier extends StateNotifier<Member?> {
   MemberNotifier(this.ref) : super(null);
 
   Future<void> getMemberInfo() async {
-    final memberInfo = await MemberRepository().getMemberInfo();
+    try {
+      final memberInfo = await MemberRepository().getMemberInfo();
 
-    if (hasNullFields(memberInfo)) {
-      ref.read(memberStateProvider.notifier).state = MemberState.memberNotRegistered;
-    } else {
-      ref.read(memberStateProvider.notifier).state = MemberState.memberRegistered;
+      if (hasNullFields(memberInfo)) {
+        ref.read(memberStateProvider.notifier).state = MemberState.memberNotRegistered;
+      } else {
+        ref.read(memberStateProvider.notifier).state = MemberState.memberRegistered;
+      }
+
+      state = memberInfo;
+    } catch (e) {
+      ref.read(authStateProvider.notifier).state = AuthState.unauthenticated;
+      rethrow;
     }
-
-    state = memberInfo;
   }
 
   Future<void> saveMemberInfo(Member memberInfo) async {

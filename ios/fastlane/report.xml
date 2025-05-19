@@ -5,22 +5,22 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000677">
+      <testcase classname="fastlane.lanes" name="0: default_platform" time="0.000177">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="1: cocoapods" time="3.447789">
+      <testcase classname="fastlane.lanes" name="1: cocoapods" time="5.051993">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="2: build_ios_app" time="620.590106">
+      <testcase classname="fastlane.lanes" name="2: build_ios_app" time="172.369777">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="3: firebase_app_distribution" time="11.700247">
+      <testcase classname="fastlane.lanes" name="3: firebase_app_distribution" time="12.746845">
         
       </testcase>
     

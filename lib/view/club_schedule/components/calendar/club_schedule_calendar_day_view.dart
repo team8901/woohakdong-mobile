@@ -43,10 +43,13 @@ class _ClubScheduleCalendarViewState extends ConsumerState<ClubScheduleCalendarD
   void initState() {
     super.initState();
     _selectedDay = _focusedDay;
-    _setSelectedDay(_selectedDay!);
     _initialPage = 5000;
     _pageController = PageController(initialPage: _initialPage);
     _currentDate = _selectedDay!;
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _setSelectedDay(_selectedDay!);
+    });
   }
 
   @override
